@@ -44,4 +44,18 @@ class DatabaseManager:
 
     def get_found_items(self):
         with sqlite3.connect(self.db_name) as conn:
-            return conn.execute('SELECT * FROM found_items').fetchall()                 
+            return conn.execute('SELECT * FROM found_items').fetchall()
+
+    def search_lost_items(self, query):
+        with sqlite3.connect(self.db_name) as conn:
+            return conn.execute('''SELECT * FROM lost_items 
+                                  WHERE name LIKE ? OR date_lost LIKE ?''',
+                               (f'%{query}%', f'%{query}%')).fetchall()
+
+    def search_found_items(self, query):
+        with sqlite3.connect(self.db_name) as conn:
+            return conn.execute('''SELECT * FROM found_items 
+                                  WHERE name LIKE ? OR date_found LIKE ?''',
+                               (f'%{query}%', f'%{query}%')).fetchall()
+                     
+                    
