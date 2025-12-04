@@ -84,6 +84,7 @@ Search by name or date: iPhone
 - Ensure Python 3 is installed on your system to run the application
 
   **Github**: @nnat3
+  
   **Gmail**: natekungu857@gmail.com
 
 ## License
