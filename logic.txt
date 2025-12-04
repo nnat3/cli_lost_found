@@ -20,3 +20,14 @@ CRUD operations
  
 **database_manager.py**
 _________________________________________________________________________________________
+**lost_found_manager.py**
+Handles user interactions;
+-Saving data to database after adding items
+-display format tables for data
+-Search items 
+-Returned logic
+-Finally delete
+Basically client-side operations
+
+**lost_found_manager.py**
+_________________________________________________________________________________________
