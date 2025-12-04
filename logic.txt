@@ -31,3 +31,10 @@ Basically client-side operations
 
 **lost_found_manager.py**
 _________________________________________________________________________________________
+**Mainmenu interface**
+Handles user interface;
+-Menu display
+-User input handling
+-Calls functions from lost_found_manager.py based on user choices
+
+**Mainmenu interface**
