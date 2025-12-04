@@ -36,4 +36,12 @@ class DatabaseManager:
         with sqlite3.connect(self.db_name) as conn:
             conn.execute('''INSERT INTO found_items (name, description, contact_info, date_found)
                            VALUES (?, ?, ?, ?)''',
-                        (item.name, item.description, item.contact_info, item.date))                    
+                        (item.name, item.description, item.contact_info, item.date))  
+
+    def get_lost_items(self):
+        with sqlite3.connect(self.db_name) as conn:
+            return conn.execute('SELECT * FROM lost_items').fetchall()
+
+    def get_found_items(self):
+        with sqlite3.connect(self.db_name) as conn:
+            return conn.execute('SELECT * FROM found_items').fetchall()                 
