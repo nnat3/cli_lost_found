@@ -15,7 +15,7 @@ class LostFoundManager:
         self.db.add_found_item(item)
         print(f"Found item '{name}' added successfully!")
 
-        def display_lost_items(self):
+    def display_lost_items(self):
         items = self.db.get_lost_items()
         if not items:
             print("No lost items found.")
