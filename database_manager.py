@@ -58,4 +58,12 @@ class DatabaseManager:
                                   WHERE name LIKE ? OR date_found LIKE ?''',
                                (f'%{query}%', f'%{query}%')).fetchall()
                      
-                    
+    def update_item_status(self, item_id, table, returned=True):
+        with sqlite3.connect(self.db_name) as conn:
+            conn.execute(f'UPDATE {table} SET returned = ? WHERE id = ?',
+                        (1 if returned else 0, item_id))
+    
+    def delete_item(self, item_id, table):
+        with sqlite3.connect(self.db_name) as conn:
+            conn.execute(f'DELETE FROM {table} WHERE id = ?', (item_id,))
+                   
