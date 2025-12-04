@@ -7,4 +7,16 @@ LostItem - Inherits from Item, based on lost items
 FoundItem - Inherits from Item, based on found items
 
 **models.py**
+______________________________________________________________________________________
+**database_manager.py**
+Handles all SQL interactions;(not the user's side!!)
+CRUD operations
+-Add Item (LostItem & FoundItem)
+-View Items (LostItem & FoundItem) - using get
+-Update Item (LostItem & FoundItem)
+-Delete Item (LostItem & FoundItem)
 
+ Oh!!!AND INSTITUTING THE TABLES
+ 
+**database_manager.py**
+_________________________________________________________________________________________
