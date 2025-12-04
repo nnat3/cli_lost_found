@@ -25,3 +25,15 @@ class DatabaseManager:
                 date_found TEXT,
                 returned INTEGER DEFAULT 0
             )''')
+
+    def add_lost_item (self, item):
+        with sqlite3.connect(self.db_name) as conn:
+            conn.execute('''INSERT INTO lost_items (name, description, contact_info, date_lost)
+                           VALUES (?, ?, ?, ?)''',
+                        (item.name, item.description, item.contact_info, item.date))
+
+    def add_found_item (self, item):
+        with sqlite3.connect(self.db_name) as conn:
+            conn.execute('''INSERT INTO found_items (name, description, contact_info, date_found)
+                           VALUES (?, ?, ?, ?)''',
+                        (item.name, item.description, item.contact_info, item.date))                    
