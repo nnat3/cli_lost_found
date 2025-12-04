@@ -1,0 +1,10 @@
+**models.py**
+Need one main class;
+ Item - (LostItem & FoundItem) as child classes
+-Contains (name,description,contact info,date & returned status)
+
+LostItem - Inherits from Item, based on lost items
+FoundItem - Inherits from Item, based on found items
+
+**models.py**
+
